@@ -1,7 +1,15 @@
-import logo from './logo.svg';
-import './App.css';
+import logo from './logo.svg'
+import './App.css'
+import React, { useState } from 'react'
 
 function App() {
+  const [server, setServer] = useState('nothing')
+  const handleClick = async () => {
+    const response = await fetch('http://localhost:1234/api')
+      .then((res) => res.json())
+      .then((res) => setServer(res))
+  }
+
   return (
     <div className="App">
       <header className="App-header">
@@ -17,9 +25,11 @@ function App() {
         >
           Learn React
         </a>
+        <button onClick={handleClick}>Click Me</button>
+        <p>{server}</p>
       </header>
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
