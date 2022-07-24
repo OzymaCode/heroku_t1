@@ -3,7 +3,7 @@ import './App.css'
 import React, { useState } from 'react'
 
 function App() {
-  const [server, setServer] = useState('nothing')
+  const [server, setServer] = useState('nothing2')
   const handleClick = async () => {
     const response = await fetch('http://localhost:1234/api')
       .then((res) => res.json())
