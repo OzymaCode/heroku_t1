@@ -5,7 +5,7 @@ import React, { useState } from 'react'
 function App() {
   const [server, setServer] = useState('nothing2')
   const handleClick = async () => {
-    const response = await fetch('http://localhost:1234/api')
+    const response = await fetch(process.env.PORT)
       .then((res) => res.json())
       .then((res) => setServer(res))
   }
