@@ -3,11 +3,11 @@ import './App.css'
 import React, { useState } from 'react'
 
 function App() {
-  const [server, setServer] = useState('nothing2')
+  const [server, setServer] = useState('nothing')
   const handleClick = async () => {
     const response = await fetch('https://appt2.herokuapp.com/api')
       .then((res) => res.json())
-      .then((res) => setServer(res))
+      .then((res) => setServer(res[0].name))
   }
 
   return (
